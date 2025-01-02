@@ -1,0 +1,8 @@
+.cache
+build
+lib
+
+*.exe
+*.json
+*.sublime-project
+*.sublime-workspace
