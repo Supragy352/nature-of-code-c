@@ -1,4 +1,4 @@
-#include "../include/raylib_extended.h"
+#include "../../include/raylib_extended.h"
 #include <raylib.h>
 
 void drawDot(DOT *dot) {

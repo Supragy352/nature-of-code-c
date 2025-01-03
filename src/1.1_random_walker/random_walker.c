@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "../include/raylib_extended.h"
-#include "../include/util.h"
+#include "../../include/raylib_extended.h"
+#include "../../include/util.h"
 
 
 int main(int argc, char const *argv[])

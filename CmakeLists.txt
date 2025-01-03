@@ -6,29 +6,90 @@ list(APPEND CMAKE_PREFIX_PATH "E:/raylib/w64devkit/external")
 
 find_package(raylib REQUIRED)
 
-set(SOURCES
-    ./src/main.c
-    ./src/raylib_extended.c
-    ./src/util.c
+set(addon_dir ${CMAKE_SOURCE_DIR}/src/addon_src)
+file(GLOB addon_sources ${addon_dir}/*.c)
+
+set(example_dirs
+    ${CMAKE_SOURCE_DIR}/src/1.1_random_walker
+    ${CMAKE_SOURCE_DIR}/src/1.2_random_dist
 )
 
-# set(HEADERS
-#     ./src/animation/script.h
+set(example_sources)
+foreach (example_dir ${example_dirs})
+    file(GLOB sources ${example_dir}/*.c)
+    list(APPEND example_sources ${sources})
+endforeach ()
+
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+)
+
+foreach (example_source ${example_sources})
+    get_filename_component(example_name ${example_source} NAME_WE)
+
+    add_executable(${example_name} ${example_source} ${addon_sources})
+
+    target_link_libraries(${example_name} PRIVATE raylib winmm gdi32 kernel32)
+
+    target_include_directories(${example_name} PRIVATE ${CMAKE_SOURCE_DIR}/include ${addon_dir})
+
+    add_custom_target(build_and_run_${example_name}
+        COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target ${example_name}
+        COMMAND ${CMAKE_BINARY_DIR}/${example_name}
+        DEPENDS ${example_name}
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+
+    add_custom_target(run_${example_name}
+        COMMAND ${CMAKE_BINARY_DIR}/${example_name}
+        DEPENDS ${example_name}
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+endforeach ()
+
+# add_custom_target(build_and_run
+#     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target noc
+#     COMMAND noc
+#     DEPENDS noc
+#     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 # )
 
-add_executable(noc ${SOURCES} ${HEADERS})
+# add_custom_target(run
+#     COMMAND noc
+#     DEPENDS noc
+#     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+# )
 
-target_link_libraries(noc raylib winmm gdi32 kernel32)
+# ----------------------- single file ---------------------------
+# cmake_minimum_required(VERSION 3.2)
+# project(noc)
 
-add_custom_target(build_and_run
-    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target noc
-    COMMAND noc
-    DEPENDS noc
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-)
+# set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# list(APPEND CMAKE_PREFIX_PATH "E:/raylib/w64devkit/external")
 
-add_custom_target(run
-    COMMAND noc
-    DEPENDS noc
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-)
+# find_package(raylib REQUIRED)
+
+# set(SOURCES
+#     *.c
+# )
+
+# # set(HEADERS
+# #     ./src/animation/script.h
+# # )
+
+# add_executable(noc ${SOURCES} ${HEADERS})
+
+# target_link_libraries(noc raylib winmm gdi32 kernel32)
+
+# add_custom_target(build_and_run
+#     COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target noc
+#     COMMAND noc
+#     DEPENDS noc
+#     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+# )
+
+# add_custom_target(run
+#     COMMAND noc
+#     DEPENDS noc
+#     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+# )
