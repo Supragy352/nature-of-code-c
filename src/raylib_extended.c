@@ -14,8 +14,8 @@ DOT createDot(Vector2 position) {
 	return (DOT){
 		.pos = position,
 		.vel = (Vector2) {0,0},
-		.size = 2.0f,
-		.color = BLACK
+		.size = 1.0f,
+		.color = WHITE
 	};
 }
 void moveDotV(DOT *dot, Vector2 dp) {

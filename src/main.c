@@ -15,16 +15,14 @@ int main(int argc, char const *argv[])
     const int screenHeight = 800;
 
     InitWindow(screenWidth, screenHeight, "Nature of Code - Random Walker");
-    
-    SetTargetFPS(5);
-    ClearBackground(RAYWHITE);
+    SetTargetFPS(165);
     DOT walker = createDot((Vector2) {screenWidth/2, screenHeight/2});
-
+    
     while (!WindowShouldClose())
     {
         BeginDrawing();
             drawDot(&walker);
-            moveDotV(&walker, randomVector2(screenHeight, screenWidth));
+            moveDotV(&walker, randomVector2(-5, 5));
         EndDrawing();
 
     }

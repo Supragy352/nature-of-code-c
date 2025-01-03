@@ -6,7 +6,7 @@
 typedef struct Dot {
 	Vector2 pos;
 	Vector2 vel;
-	int size;
+	float size;
 	Color color;
 } DOT;
 
