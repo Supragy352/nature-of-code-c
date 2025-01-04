@@ -10,8 +10,9 @@ set(addon_dir ${CMAKE_SOURCE_DIR}/src/addon_src)
 file(GLOB addon_sources ${addon_dir}/*.c)
 
 set(example_dirs
-    ${CMAKE_SOURCE_DIR}/src/1.1_random_walker
-    ${CMAKE_SOURCE_DIR}/src/1.2_random_dist
+    ${CMAKE_SOURCE_DIR}/src/1_Randomness
+    # ${CMAKE_SOURCE_DIR}/src/1.2_random_dist
+    # ${CMAKE_SOURCE_DIR}/src/1.3_pseudo_random_numbers
 )
 
 set(example_sources)

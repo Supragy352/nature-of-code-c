@@ -1,6 +1,7 @@
 #include "../../include/util.h"
 #include <raylib.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 Vector2 randomVector2(int min, int max) {
 	return (Vector2) {
@@ -51,4 +52,22 @@ Color randomColor() {
     	.b = (rand() % 256),
     	.a = (rand() % 256)
 	};
+}
+
+#include <stdlib.h>
+
+int randomIntFromArray(int* a, int size) {
+    if (size <= 0) {
+        return -1;
+    }
+    int r = rand() % size;
+    return *(a + r);      
+}
+
+float randomFloatBtwInts(int min, int max) {
+	return (float) ((rand() % max) + min) / (float) ((rand() % max) + min);
+}
+
+float randomFloatBtwFloat(float min, float max) {
+    return ((float)rand() / RAND_MAX) * (max - min) + min;
 }

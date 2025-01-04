@@ -1,6 +1,10 @@
 #pragma once
 #include <raylib.h>
 
+
+int randomIntFromArray(int* a, int size);
+float randomFloat(int min, int max);
+float randomFloatBtwFloat(float min, float max);
 Vector2 randomVector2(int min, int max);
 Vector2 randomVector2Full(int minX, int maxX, int minY, int maxY);
 Vector3 randomVector3(int min, int max);
