@@ -7,8 +7,6 @@
 #include "../../include/raylib_extended.h"
 #include "../../include/util.h"
 
-int add(int a, int b);
-
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
@@ -22,7 +20,6 @@ int main(int argc, char const *argv[])
     while (!WindowShouldClose())
     {
         float a = randomFloatBtwFloat(0.0f, 1.0f);
-        printf("%d", add(2, 3));
         BeginDrawing();
             drawDot(&walker);
             if (a < 0.4) {

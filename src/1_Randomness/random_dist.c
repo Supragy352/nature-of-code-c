@@ -2,8 +2,8 @@
 
 int main(int argc, char const *argv[])
 {
-    const int screenWidth = 800;
-    const int screenHeight = 800;
+    const int screenWidth = 100;
+    const int screenHeight = 100;
 
     InitWindow(screenWidth, screenHeight, "Nature of Code - Random Distribution");
     
