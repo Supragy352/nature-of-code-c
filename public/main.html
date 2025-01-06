@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature of Code Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #007ACC;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .example {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .example:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .example a {
+            text-decoration: none;
+            color: #007ACC;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nature of Code Examples</h1>
+    </header>
+    <main id="exampleList">
+        <!-- JavaScript will dynamically populate this -->
+    </main>
+    <script>
+        const examples = [
+            "random_dist",
+            "pseudo_random",
+            "random_walker"
+        ];
+
+        const exampleList = document.getElementById('exampleList');
+
+        examples.forEach(example => {
+            const exampleCard = document.createElement('div');
+            exampleCard.className = 'example';
+            exampleCard.innerHTML = `
+                <a href="${example}/index.html" target="_blank">${example}</a>
+            `;
+            exampleList.appendChild(exampleCard);
+        });
+    </script>
+</body>
+</html>
