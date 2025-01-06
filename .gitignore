@@ -1,8 +1,12 @@
 .cache
 build
 lib
+webbuild/*
+!webbuild/public/
+!webbuild/public/**
 
 *.exe
 *.json
 *.sublime-project
 *.sublime-workspace
+*.py
