@@ -29,6 +29,9 @@ $(WEB_BUILD)/%/index.html: $(SRC_DIR)/%.c $(ADDONS)
 	mkdir -p $(dir $@)
 	$(CC) -o $@ $< $(ADDONS) $(CFLAGS) $(INCLUDES) $(LIBS)
 	@echo "Built $< -> $@"
+html:
+	cd ${WEB_BUILD}
+	mpx quartz build
 
 # Clean rule to remove all built files
 clean:
