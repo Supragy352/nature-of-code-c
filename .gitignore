@@ -1,7 +1,7 @@
 .cache
 build
 lib
-webbuild
+quartz
 *.exe
 *.json
 *.sublime-project
