@@ -2,7 +2,7 @@
 SRC_DIR := ./src
 SUBSRC_SRC_DIR := 1_Randomness
 ADDON_SRC := ./src/addon_src
-WEB_BUILD := ./webbuild/content
+WEB_BUILD := ./content/
 
 # Define addons and compiler settings
 ADDONS := $(wildcard $(ADDON_SRC)/*.c)
@@ -46,4 +46,4 @@ build_example:
 	fi
 	mkdir -p $(WEB_BUILD)/$(FILE)
 	$(CC) -o $(WEB_BUILD)/$(FILE)/index.html $(SRC_DIR)/${SUBSRC_SRC_DIR}/$(FILE).c $(ADDONS) $(CFLAGS) $(INCLUDES) $(LIBS)
-	@echo "Built $(SRC_DIR)/1_Randomness/$(FILE).c -> $(WEB_BUILD)/$(FILE)/$(FILE).html"
+	@echo "Built $(SRC_DIR)/1_Randomness/$(FILE).c -> $(WEB_BUILD)/$(FILE)/index.html"

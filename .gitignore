@@ -2,6 +2,7 @@
 build
 lib
 quartz
+content
 *.exe
 *.json
 *.sublime-project
