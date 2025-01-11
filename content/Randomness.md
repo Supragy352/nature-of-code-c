@@ -12,11 +12,12 @@ When working with randomness in code, it becomes an essential ingredient for:
 
 This chapter covers the basics of randomness and is basically a way of the author to make you familiar with the programming and brush up on some simple code.
 
-Each heading below links to the page for each example [[main.html|here]]
-### [[./random_walker/index.html|Random Walker]]
+Each heading below links to the page for each example 
+### [[main.html|here]]
 
-### [[random_dist/index.html|Random Distribution]]
 
-### [[pseudo_random/index.html|Pseudo Random Numbers]]
-### [[normal_distribution/index.html|Normal Distribution]]
+### Random Walker
+### Random Distribution
+### Pseudo Random Numbers
+### Normal Distribution
 
