@@ -2,7 +2,7 @@
 #include <raylib.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../../include/raylib_extended.h"
+// #include "../../include/raylib_extended.h"
 
 #define samples 1000
 
