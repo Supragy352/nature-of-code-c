@@ -47,3 +47,5 @@ build_example:
 	mkdir -p $(WEB_BUILD)/$(FILE)
 	$(CC) -o $(WEB_BUILD)/$(FILE)/index.html $(SRC_DIR)/${SUBSRC_SRC_DIR}/$(FILE).c $(ADDONS) $(CFLAGS) $(INCLUDES) $(LIBS)
 	@echo "Built $(SRC_DIR)/1_Randomness/$(FILE).c -> $(WEB_BUILD)/$(FILE)/index.html"
+	mkdir -p C://Users//Supragy//Desktop//$(WEB_BUILD)/$(FILE)
+	cp $(WEB_BUILD)/$(FILE)/** C://Users//Supragy//Desktop//$(WEB_BUILD)/$(FILE)//
