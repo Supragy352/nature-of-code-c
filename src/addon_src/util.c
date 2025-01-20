@@ -1,4 +1,5 @@
 #include "../../include/util.h"
+#include <math.h>
 #include <raylib.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -70,4 +71,18 @@ float randomFloatBtwInts(int min, int max) {
 
 float randomFloatBtwFloat(float min, float max) {
     return ((float)rand() / RAND_MAX) * (max - min) + min;
+}
+
+float randomGaussian(float mean, float sd) {
+	float x1, x2, w;
+	do {
+		x1 = 2.0f * ((float)rand() / RAND_MAX) - 1.0f;
+		x2 = 2.0f * ((float)rand() / RAND_MAX) - 1.0f;
+		w = x1 * x1 + x2 * x2;
+	} while (w >= 1);
+	w = sqrtf(-2.0f * logf(w) / w);
+	float y1 = x1 * w;
+	float y2 = x2 * w;
+
+	return y1 * sd + mean;
 }
