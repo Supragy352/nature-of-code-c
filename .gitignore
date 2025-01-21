@@ -3,6 +3,7 @@ build
 lib
 quartz
 content
+node_modules
 *.exe
 *.json
 *.sublime-project

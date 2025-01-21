@@ -1,2 +1,11 @@
  ✔ Built-in function for Gaussian Distribution @done (25-01-20 23:17)
  ✔ Program testing other SD and Mean values @done (25-01-20 23:25)
+
+ Levy Flight:
+   ☐ Large Steps
+   ☐ Custom Distribuion
+     ☐ Pick a random number: r1.
+     ☐ Compute a probability p that r1 should qualify. Let’s try: p = r1. 
+     ☐ Pick another random number: r2.
+     ☐ If r2 is less than p, you’ve found your number: r1
+     ☐ If r2 isn’t less than p, go back to step 1 and start over
