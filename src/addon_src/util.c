@@ -55,8 +55,6 @@ Color randomColor() {
 	};
 }
 
-#include <stdlib.h>
-
 int randomIntFromArray(int* a, int size) {
     if (size <= 0) {
         return -1;
@@ -85,4 +83,8 @@ float randomGaussian(float mean, float sd) {
 	float y2 = x2 * w;
 
 	return y1 * sd + mean;
+}
+
+int mapInt(int toMap, int fromMin, int fromMax, int toMin, int toMax) {
+	return toMin + (toMax - toMin) * ((toMap - fromMin) / (fromMax / fromMin));
 }

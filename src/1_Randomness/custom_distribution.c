@@ -20,7 +20,6 @@ int main(int argc, char const *argv[])
             float x1 = randomFloat(0, 1);
             float probability = x1;
             float x2 = randomFloat(0, 1);
-            
         EndDrawing();
     }
     CloseWindow();

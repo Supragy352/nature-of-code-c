@@ -9,3 +9,10 @@
      ☐ Pick another random number: r2.
      ☐ If r2 is less than p, you’ve found your number: r1
      ☐ If r2 isn’t less than p, go back to step 1 and start over
+
+Chapter 0 Exercises:
+  ☐ Add mean and sd calculation capability
+  ☐ Exercise 0.4 Paint Splatter
+  ☐ Exercise 0.5 Gaussian Random Walk
+  ☐ Exercise 0.6 Random Walker Variation
+  ☐ Perlin Noise
